@@ -16,4 +16,11 @@ jobs:
     - uses: actions/checkout@v2
       name: Check out code
       
+    - name: Build and Push Docker Image
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with:
+        image: syedtaha1/ci_github
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
 
